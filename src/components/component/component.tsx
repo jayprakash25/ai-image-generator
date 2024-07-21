@@ -27,6 +27,7 @@ import Link from "next/link"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import Image from "next/image"
 
 export function Component() {
   return (
@@ -82,7 +83,7 @@ export function Component() {
               </div>
             </div>
             <div className="relative">
-              <img
+              <Image
                 src="/placeholder.svg"
                 width={600}
                 height={600}
@@ -113,7 +114,7 @@ export function Component() {
                 key={i}
                 className="group relative overflow-hidden rounded-lg bg-muted/40 transition-all hover:scale-105"
               >
-                <img
+                <Image
                   src="/placeholder.svg"
                   width={300}
                   height={300}
@@ -122,7 +123,7 @@ export function Component() {
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                   <p className="text-sm text-foreground">
-                    "A vibrant, abstract landscape with bold colors and dynamic\n shapes."
+                    &quot;A vibrant, abstract landscape with bold colors and dynamic\n shapes.&quot;
                   </p>
                   <Button variant="ghost" size="icon">
                     <HeartIcon className="h-4 w-4" />
