@@ -9,6 +9,13 @@ declare module "next-auth" {
     image?: string;
   }
 
+  interface Profile {
+    sub: string;
+    name: string;
+    email: string;
+    picture: string;
+  }
+
   interface Session {
     user: {
       id?: string;

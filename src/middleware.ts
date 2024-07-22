@@ -7,17 +7,20 @@ export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });
   const url = request.nextUrl;
 
+  console.log(token, "token")
+
   if (token) {
     if (
-      url.pathname === "/login" ||
-      url.pathname === "/"
+      url.pathname === "/login"
     ) {
-      return NextResponse.redirect(new URL("/explore", request.url));
+      return NextResponse.redirect(new URL("/", request.url));
     }
 
   } else {
     // Redirect unauthenticated users away from protected pages
-    if (url.pathname.startsWith('/explore')) {
+    if (url.pathname === "/" ||
+      url.pathname === "/profile" ||
+      url.pathname === "/generate") {
       return NextResponse.redirect(new URL('/login', request.url));
     }
   }
@@ -28,5 +31,5 @@ export async function middleware(request: NextRequest) {
 
 // See "Matching Paths" 
 export const config = {
-  matcher: ["/signin", "/","/login", "/explore", "/generate", "/profile"],
+  matcher: ["/","/login", "/explore", "/generate", "/profile"],
 };

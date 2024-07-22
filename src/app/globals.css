@@ -59,6 +59,10 @@
   }
 }
 
+.btn-neon:hover polyline {
+  stroke-dashoffset: -460;
+}
+
 @layer base {
   * {
     @apply border-border;

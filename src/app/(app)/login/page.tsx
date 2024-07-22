@@ -8,16 +8,16 @@ import { signOut, useSession } from 'next-auth/react'
 
 const Login = () => {
 
-  const {data: session} = useSession();
+  // const {data: session} = useSession();
 
-  if(session){
-    return (
-      <>
-      Signed in as {session.user.email} <br/>
-      <Button onClick={() => signOut()}>Sign out</Button>
-      </>
-    )
-  }
+  // if(session){
+  //   return (
+  //     <>
+  //     Signed in as {session.user.email} <br/>
+  //     <Button onClick={() => signOut()}>Sign out</Button>
+  //     </>
+  //   )
+  // }
 
   return (
     <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">

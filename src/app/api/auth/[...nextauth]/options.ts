@@ -5,8 +5,8 @@ import GoogleProvider from "next-auth/providers/google";
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID ?? "",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
       authorization: {
         params: {
           // prompt: "content",
@@ -27,12 +27,13 @@ callbacks:{
 
     return session;
   },
-  async jwt({ token, user, account, profile }) {
+  async jwt({ token, account, profile }) {
     if (account?.provider === "google" && profile) {
+      console.log(profile)
       token.id = profile.sub;
       token.name = profile.name;
       token.email = profile.email;
-      token.picture = profile.image;
+      token.picture = profile.picture;
     }
 
     return token;

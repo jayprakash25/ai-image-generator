@@ -18,15 +18,16 @@ const Header = () => {
     console.log(user)
 
   return (
-    <div>
         <header className="sticky top-0 z-40 flex h-16 items-center justify-between border-b border-muted bg-background px-4 sm:px-6">
-        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+        <Link href={`${user? '/' : '/login'}`} className="flex items-center gap-2" prefetch={false}>
           <MountainIcon className="h-6 w-6" />
           <span className="text-lg font-semibold">Imagine</span>
         </Link>
-        <p className='font-semibold'>Hey, {user?.name}</p>
-
-        <DropdownMenu>
+        {/* <p className='font-semibold'>Hey, {user?.name}</p> */}
+        {
+          session ? (
+            <>
+                <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="rounded-full">
               <Avatar className="h-8 w-8">
@@ -37,17 +38,25 @@ const Header = () => {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem>
-              <Link href="#" prefetch={false}>
+              <Link href="/profile" prefetch={false}>
                 Profile
               </Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={() => {signOut()}} >Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+            </>
+          ) : (
+            <Link href="/login" prefetch={false}>
+              <Button>Login</Button>
+            </Link>
+          )
+          
+        }
+
+      
       </header>
-    </div>
   )
 }
 
