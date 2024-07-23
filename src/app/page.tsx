@@ -5,27 +5,30 @@ import Image from 'next/image'
 import { hero } from '@/assets'
 import NeonButton from '@/components/NeonButton'
 import { d1, d2, d3 } from '@/assets/imageExports'
+import ImageGrid from '@/components/ImageGrid'
 
 const page = () => {
+  const imageSources = [d1, d2, d3, d1, d2, d3, d1];
   return (
 <div className="flex flex-col min-h-dvh bg-background text-foreground">
       <main className="flex-1">
       <div className="flex flex-col items-center justify-center min-h-[100dvh] bg-gradient-to-b from-[#f0f0f0] to-white">
       <section className="container px-4 py-12 md:py-24 lg:py-32 text-center">
-        <div className="max-w-2xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Delight Your Audience</h1>
           <p className="text-muted-foreground font-semibold text-lg md:text-xl">
             Create prompts that anyone can use to make awesome images
           </p>
-          <div className="grid grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-7">
-            <Image src={d1} width={150} height={150} alt="Example Image" className="rounded-lg" />
-            <Image src={d2} width={150} height={150} alt="Example Image" className="rounded-lg" />
-            <Image src={d3} width={150} height={150} alt="Example Image" className="rounded-lg" />
-            <Image src={d1} width={150} height={150} alt="Example Image" className="rounded-lg" />
-            <Image src={d2} width={150} height={150} alt="Example Image" className="rounded-lg" />
-            <Image src={d3} width={150} height={150} alt="Example Image" className="rounded-lg" />
-            <Image src={d1} width={150} height={150} alt="Example Image" className="rounded-lg" />
-          </div>
+          {/* <div className="grid grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-7">
+            <Image src={d1} width={300} height={300} alt="Example Image" className="rounded-lg" />
+            <Image src={d2} width={300} height={300} alt="Example Image" className="rounded-lg" />
+            <Image src={d3} width={300} height={300} alt="Example Image" className="rounded-lg" />
+            <Image src={d1} width={300} height={300} alt="Example Image" className="rounded-lg" />
+            <Image src={d2} width={300} height={300} alt="Example Image" className="rounded-lg" />
+            <Image src={d3} width={300} height={300} alt="Example Image" className="rounded-lg" />
+            <Image src={d1} width={300} height={300} alt="Example Image" className="rounded-lg" />
+          </div> */}
+          <ImageGrid images={imageSources}/>
           <div>
           <Link   href="/generate"
             prefetch={false}>
@@ -123,7 +126,7 @@ function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      <path d="m8 3 4 8 5-5 5 30H2L8 3z" />
     </svg>
   )
 }

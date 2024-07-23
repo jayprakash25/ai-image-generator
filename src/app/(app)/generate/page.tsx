@@ -141,7 +141,7 @@ const TalkDataToMe = () => {
       )}
 
       <div className="sticky bottom-0 bg-white p-4 border-t border-gray-200">
-      <div className="relative z-10 max-w-2xl mx-auto flex items-center space-x-2 overflow-hidden rounded-lg shadow-sm border border-gray-200 p-2">
+      <div className="relative z-10 max-w-2xl mx-auto flex items-center  overflow-hidden rounded-lg shadow-sm  p-1">
         <div className="animate-rotate absolute inset-0 h-full w-full rounded-full bg-[conic-gradient(#C0C0C0_20deg,transparent_120deg)]"></div>
         <div className="relative z-20 flex w-full rounded-lg bg-gray-100 p-1">
           <Input

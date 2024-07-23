@@ -9,7 +9,7 @@ const NeonButton: React.FC<NeonButtonProps> = ({ children, onClick }) => {
   return (
     <Button 
     onClick={onClick}
-    className="btn-neon bg-primary relative text-white hover:text-[#f0f0f0]  text-lg transition duration-1000  delay-900 hover:bg-primary/60 hover:shadow-[0_0_10px_#606060,0_0_40px_#606060,0_0_80px_#606060] w-[160px] h-[45px]"
+    className="btn-neon bg-primary relative text-white hover:text-[#f0f0f0]  text-lg transition duration-1000  delay-900 hover:bg-primary/90 hover:shadow-[0_0_10px_#7393B3,0_0_40px_#7393B3,0_0_80px_#7393B3] w-[160px] h-[45px]"
   >
     {children}
     <svg className="absolute inset-0 w-full h-full" height="50" width="180">
