@@ -1,6 +1,6 @@
 # AI-Inspired Image Generator
 
-Welcome to the AI-Inspired Image Generator, a Next.js application that simulates AI image generation by randomly selecting pre-downloaded images based on user prompts. This project showcases the use of Next.js, Vercel KV, and Next-Auth.
+ A Next.js application that simulates AI image generation by randomly selecting pre-downloaded images based on user prompts. This project showcases the use of Next.js, Vercel KV, and Next-Auth.
 
 ## 🌟 Features
 
